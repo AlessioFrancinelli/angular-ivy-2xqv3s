@@ -1,0 +1,17 @@
+::ng-deep mat-autocomplete {
+  width: fit-content !important;
+}
+
+::ng-deep .cdk-overlay-pane {
+  width: auto !important;
+}
+
+.auto-width {
+  .mat-form-field {
+    width: auto !important;
+  }
+  .mat-select-value {
+    max-width: 100%;
+    width: auto;
+  }
+}

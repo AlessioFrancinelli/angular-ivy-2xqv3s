@@ -1,0 +1,15 @@
+<h4 id="example-radio-group-label">{{ title }}</h4>
+<mat-radio-group
+  aria-label="Select an option"
+  class="radio-group"
+  [(ngModel)]="value"
+  (change)="onValueChange()"
+>
+  <mat-radio-button
+    class="radio-button"
+    *ngFor="let element of data"
+    [value]="element"
+  >
+    {{ element }}
+  </mat-radio-button>
+</mat-radio-group>

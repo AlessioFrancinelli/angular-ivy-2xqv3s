@@ -1,0 +1,49 @@
+<div *ngFor="let component of config; let i = index; let first = first">
+  <yes-no-question
+    *ngIf="
+      getComponent(i).type == 'yes-no-question' &&
+      (first || getComponent(i - 1).value != null)
+    "
+    [id]="i"
+    [title]="getComponent(i).title"
+    [(value)]="getComponent(i).value"
+    (change)="elementChanged($event)"
+  ></yes-no-question>
+  <dropdown-list
+    *ngIf="
+      getComponent(i).type == 'dropdown-list' &&
+      (first || getComponent(i - 1).value != null)
+    "
+    [id]="i"
+    [title]="getComponent(i).title"
+    [data]="getList(getComponent(i))"
+    [(value)]="getComponent(i).value"
+    (change)="elementChanged($event)"
+  ></dropdown-list>
+  <number-input
+    *ngIf="
+      getComponent(i).type == 'number-input' &&
+      (first || getComponent(i - 1).value != null)
+    "
+    [id]="i"
+    [title]="getComponent(i).title"
+    [(value)]="getComponent(i).value"
+    (change)="elementChanged($event)"
+  ></number-input>
+  <radio-group
+    *ngIf="
+      getComponent(i).type == 'radio-group' &&
+      (first || getComponent(i - 1).value != null)
+    "
+    [id]="i"
+    [title]="getComponent(i).title"
+    [data]="getList(getComponent(i))"
+    [(value)]="getComponent(i).value"
+    (change)="elementChanged($event)"
+  ></radio-group>
+</div>
+<submit-button
+  *ngIf="checkAllValues()"
+  (buttonPressed)="showResults()"
+></submit-button>
+<p *ngIf="displayResults">{{ showData() }}</p>

@@ -1,0 +1,17 @@
+<div [@inOutAnimation]>
+  <h4>{{ title }}</h4>
+  <mat-form-field appearance="outline">
+    <mat-label>sélectionnez une option</mat-label>
+    <mat-select
+      matNativeControl
+      [(ngModel)]="value"
+      (selectionChange)="onValueChange()"
+      name="title"
+    >
+      <mat-option *ngFor="let element of data" [value]="element">
+        {{ element }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br />
+</div>

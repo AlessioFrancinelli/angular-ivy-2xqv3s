@@ -1,0 +1,14 @@
+<h4 [@inOutAnimation]>
+  {{ title }}
+  <div>
+    <br />
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="value"
+        (change)="onValueChange()"
+      />
+    </mat-form-field>
+  </div>
+</h4>

@@ -1,0 +1,22 @@
+<h4 [@inOutAnimation] #id>
+  {{ title }}
+  <div>
+    <br />
+    <button
+      mat-raised-button
+      [ngClass]="{ selected: value == true }"
+      (click)="clickYes()"
+      style="margin-right: 6px;"
+    >
+      oui
+    </button>
+    <button
+      mat-raised-button
+      [ngClass]="{ selected: value == false }"
+      (click)="clickNo()"
+    >
+      non
+    </button>
+  </div>
+  <br />
+</h4>
