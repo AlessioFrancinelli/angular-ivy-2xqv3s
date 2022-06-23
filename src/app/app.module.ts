@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { YesNoQuestionComponent } from './yes-no-question/yes-no-question.component';
@@ -25,6 +26,7 @@ import { RadioGroupComponent } from './radio-group/radio-group.component';
     MatSelectModule,
     MatInputModule,
     MatRadioModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     AppComponent,

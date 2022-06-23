@@ -1,14 +1,26 @@
-<h4 [@inOutAnimation]>
-  {{ title }}
-  <div>
-    <br />
-    <mat-form-field appearance="outline">
-      <input
-        matInput
-        type="number"
-        [(ngModel)]="value"
-        (change)="onValueChange()"
-      />
-    </mat-form-field>
-  </div>
-</h4>
+<form [formGroup]="componentForm" novalidate>
+  <h4 [@inOutAnimation]>
+    {{ title }}
+    <div>
+      <br />
+      <mat-form-field appearance="outline">
+        <input
+          formControlName="control"
+          matInput
+          type="number"
+          [(ngModel)]="value"
+          (change)="onValueChange()"
+        />
+        <div
+          *ngIf="
+            (componentForm.controls['control'].invalid &&
+              componentForm.controls['control'].dirty) ||
+            componentForm.controls['control'].touched
+          "
+        >
+          Validator
+        </div>
+      </mat-form-field>
+    </div>
+  </h4>
+</form>

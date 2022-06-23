@@ -1,6 +1,12 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter } from '@angular/core';
 import { Input, Output } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'number-input',
@@ -20,9 +26,19 @@ export class NumberInputComponent {
   @Output() valueChange = new EventEmitter<boolean>();
   @Input() value: boolean;
 
+  componentForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }
+
+  createForm() {
+    this.componentForm = this.fb.group({
+      control: ['', Validators.max(3)],
+    });
+  }
+
   onValueChange() {
     this.valueChange.emit(this.value);
   }
-
-  constructor() {}
 }

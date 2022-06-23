@@ -13,8 +13,13 @@ export class AppComponent {
       value: null,
       list: ['Winter', 'Spring', 'Summer', 'Autumn'],
     },
-    {
+    /*{
       type: 'yes-no-question',
+      title: 'Question 2',
+      value: null,
+    },*/
+    {
+      type: 'number-input',
       title: 'Question 2',
       value: null,
     },
