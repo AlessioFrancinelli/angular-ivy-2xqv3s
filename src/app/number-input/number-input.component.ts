@@ -34,7 +34,7 @@ export class NumberInputComponent {
 
   createForm() {
     this.componentForm = this.fb.group({
-      control: ['', Validators.max(3)],
+      control: new FormControl(this.value, [Validators.max(3)]),
     });
   }
 
