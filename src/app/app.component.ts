@@ -8,22 +8,28 @@ import { Component } from '@angular/core';
 export class AppComponent {
   config = [
     {
+      type: 'number-input',
+      title: 'Question 2',
+      value: null,
+      params: {
+        validators : [{
+          type: 'max',
+          validatorParams: '4'
+          errorMessage: 'Le maximum est 4',
+        }, {
+          type: 'min',
+          validatorParams: '1'
+          errorMessage: 'Le minimum est 1',
+        }]
+      }
+    },
+    {
       type: 'radio-group',
       title: 'Question 1',
       value: null,
       list: ['Winter', 'Spring', 'Summer', 'Autumn'],
     },
     /*{
-      type: 'yes-no-question',
-      title: 'Question 2',
-      value: null,
-    },*/
-    {
-      type: 'number-input',
-      title: 'Question 2',
-      value: null,
-    },
-    {
       type: 'condition',
       value: null,
       children: [
@@ -46,7 +52,7 @@ export class AppComponent {
           title: '[Condition] Question 3 (Non)',
           value: null,
         },
-      ],
+      ],*/
     },
     {
       type: 'yes-no-question',
