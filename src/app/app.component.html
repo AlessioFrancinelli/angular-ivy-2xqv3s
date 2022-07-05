@@ -29,6 +29,7 @@
     [title]="getComponent(i).title"
     [(value)]="getComponent(i).value"
     (change)="elementChanged($event)"
+    [params]="getParams(getComponent(i))"
   ></number-input>
   <radio-group
     *ngIf="

@@ -12,24 +12,27 @@ export class AppComponent {
       title: 'Question 2',
       value: null,
       params: {
-        validators : [{
-          type: 'max',
-          validatorParams: '4'
-          errorMessage: 'Le maximum est 4',
-        }, {
-          type: 'min',
-          validatorParams: '1'
-          errorMessage: 'Le minimum est 1',
-        }]
-      }
+        validators: [
+          {
+            type: 'max',
+            validatorParams: '4',
+            errorMessage: 'Le maximum est 4',
+          },
+          {
+            type: 'min',
+            validatorParams: '1',
+            errorMessage: 'Le minimum est 1',
+          },
+        ],
+      },
     },
     {
       type: 'radio-group',
       title: 'Question 1',
       value: null,
-      list: ['Winter', 'Spring', 'Summer', 'Autumn'],
+      list: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
     },
-    /*{
+    {
       type: 'condition',
       value: null,
       children: [
@@ -52,7 +55,7 @@ export class AppComponent {
           title: '[Condition] Question 3 (Non)',
           value: null,
         },
-      ],*/
+      ],
     },
     {
       type: 'yes-no-question',
@@ -91,6 +94,13 @@ export class AppComponent {
 
   showResults() {
     this.displayResults = true;
+  }
+
+  getParams(component) {
+    if (component.params === null || component.params === undefined) {
+      return null;
+    }
+    return component.params;
   }
 
   showData(): string {
